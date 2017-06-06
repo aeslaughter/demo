@@ -14,7 +14,9 @@ LaplaceYoung::LaplaceYoung(const InputParameters & parameters) : Diffusion(param
 Real
 LaplaceYoung::computeQpResidual()
 {
-  return _grad_u[_qp] * _grad_test[_i][_qp];
+  Real kappa = 0.2;
+  Real k = 1./(std::sqrt(1 + _grad_u[_qp] * _grad_u[_qp]));
+  return k * Diffusion::computeQpResidual() + _test[_i][_qp] * kappa * _u[_qp];
 }
 
 Real
