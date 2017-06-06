@@ -19,6 +19,8 @@ protected:
   virtual Real computeQpJacobian() override;
 
   Real k();
+
+  const Real & _kappa;
 };
 
 #endif

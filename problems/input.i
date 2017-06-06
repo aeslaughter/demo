@@ -14,6 +14,7 @@
   [./whatever_you_want]
     type = LaplaceYoung
     variable = unknown
+    kappa = 0.5
   [../]
 []
 
@@ -21,8 +22,8 @@
   [./flux]
     type = NeumannBC
     boundary = 'left right top bottom'
-    value = 0.2
     variable = unknown
+    value = 0.2
   [../]
 []
 
@@ -35,3 +36,4 @@
 [Outputs]
   exodus = true
 []
+
