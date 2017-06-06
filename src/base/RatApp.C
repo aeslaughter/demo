@@ -3,6 +3,7 @@
 #include "AppFactory.h"
 #include "ModulesApp.h"
 #include "MooseSyntax.h"
+#include "LaplaceYoung.h"
 
 template <>
 InputParameters
@@ -46,6 +47,7 @@ RatApp__registerObjects(Factory & factory)
 void
 RatApp::registerObjects(Factory & factory)
 {
+  registerKernel(LaplaceYoung);
 }
 
 // External entry point for dynamic syntax association
